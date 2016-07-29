@@ -37,5 +37,3 @@ var router = require('./routes')(app, customer);
 var server = app.listen(port, function(){
  console.log("Express server has started on port " + port)
 });
-//mongodb 서버 접속
-//mongo ds031865.mlab.com:31865/customertalbe -u certiware -p certiware1!
