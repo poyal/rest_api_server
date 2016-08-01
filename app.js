@@ -13,7 +13,7 @@ var db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', function(){
     // CONNECTED TO MONGODB SERVER
-    console.log("Connected to mongod server");
+    console.log("Connected to mongod server --version0.1");
 });
 
 mongoose.connect('mongodb://certiware:certiware1!@ds031865.mlab.com:31865/customertalbe');
@@ -26,14 +26,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // app.use(cors({origin: 'http://localhost:8080'}));
 
-// [CONFIGURE SERVER PORT]
-
-var port = process.env.PORT || 8080;
-
 // [CONFIGURE ROUTER]
 var router = require('./routes')(app, customer);
 
 // [RUN SERVER]
-var server = app.listen(port, function(){
- console.log("Express server has started on port " + port)
+var server = app.listen(process.env.PORT || 3000 , function(){
+    // CONNECTED TO MONGODB SERVER
+    console.log("Mongod server start");
 });
